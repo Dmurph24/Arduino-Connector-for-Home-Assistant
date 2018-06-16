@@ -44,7 +44,7 @@ void setup() {
     ha.callEntityService(MEDIA_PAUSE, MEDIA_PLAYER_ENTITY_ID);
 
     // To read the state of an entity
-    ha.readState(LIGHT_ENTITY_ID);
+    String state = ha.readState(LIGHT_ENTITY_ID);
 
     // Sometimes you may want to access the attributes of an entity
     // This can be done by using the following:
