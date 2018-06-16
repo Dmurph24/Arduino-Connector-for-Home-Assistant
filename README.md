@@ -12,7 +12,7 @@ If you would like to contribute, please submit a pull request that matches the s
 
 ## Dependencies
 ESP8266HomeAssistant requires ArduinoJson to create and parse objects to Home Assistant. Therefore, this library must be installed. Additionally, the ESP8266 platform. This allows the device to use WiFi and HTTPClient libraries.
-1. Install the ArduinoJson library
+1. Install the ArduinoJson library ([ArduinoJson Website](https://arduinojson.org/))
   - If you do not know how to install a library, visit this link: https://www.arduino.cc/en/guide/libraries
 2. Open the Arduino IDE and go to Preferences. In `Additional Boards Manager URLs` enter the following:
   - `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
