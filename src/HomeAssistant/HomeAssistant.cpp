@@ -50,8 +50,8 @@ bool HomeAssistant::connected()
  */
 String HomeAssistant::readState(const String entity_id)
 {
-  String url = _API_BASE + "states/" + entity_id;
-  return stateFromString(*get(url));
+  String response = readResponse(entity_id);
+  return stateFromString(response);
 }
 
 /*
@@ -62,7 +62,7 @@ String HomeAssistant::readState(const String entity_id)
 String HomeAssistant::readResponse(const String entity_id)
 {
   String url = _API_BASE + "states/" + entity_id;
-  return *get(url);
+  return get(url);
 }
 
 /*
@@ -115,8 +115,8 @@ bool HomeAssistant::callEntityService(uint8_t service, const String entity_id)
 /* Checks to see if the API connection to HA is valid */
 bool HomeAssistant::healthCheck()
 {
-  String* jsonStr = get(_API_BASE);
-  return jsonStr != nullptr;
+  String jsonStr = get(_API_BASE);
+  return jsonStr != "";
 }
 
 /* ******************************************************** */
@@ -132,7 +132,11 @@ String HomeAssistant::stateFromString(const String payload)
 {
   DynamicJsonBuffer jsonBuffer;
   JsonObject& root = jsonBuffer.parseObject(payload);
-  return root["state"];
+  if(!root.success()) {
+    return "FAILED TO PARSE RESPONSE";
+  }
+  const char* state = root["state"];
+  return state;
 }
 
 /*
@@ -198,18 +202,17 @@ bool HomeAssistant::post(const String url, const String body) {
 /*
  * Performs a GET request for a given URL
  * @param String url: Url to call for the GET request
- * @return JsonObject* : Json response of the GET request
+ * @return String : Json response of the GET request
  */
-String* HomeAssistant::get(const String url) {
+String HomeAssistant::get(const String url) {
   HTTPClient http;
   setupHttpClient(&http, url);
 
   int httpCode = http.GET();
   if (httpCode == HTTP_CODE_OK) {
-    String response = http.getString();
-    return &response;
+    return http.getString();
   } else {
-    return nullptr;
+    return "";
   }
   http.end();
 }

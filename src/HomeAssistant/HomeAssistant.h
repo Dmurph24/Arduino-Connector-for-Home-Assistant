@@ -26,7 +26,7 @@ class HomeAssistant
     String stateJson(const String state);
     void setupHttpClient(HTTPClient* http, String url);
     bool post(const String url, String body);
-    String* get(const String url);
+    String get(const String url);
 
     String _API_BASE;
     String _API_PASS;
