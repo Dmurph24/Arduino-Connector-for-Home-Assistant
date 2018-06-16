@@ -75,5 +75,8 @@ HomeAssistantService::HomeAssistantService(uint8_t service) {
     case MEDIA_STOP:
       this->endpoint = "media_player/media_stop";
       break;
+    case TTS_GOOGLE_SAY:
+      this->endpoint = "tts/google_say";
+      break;
   }
 }
