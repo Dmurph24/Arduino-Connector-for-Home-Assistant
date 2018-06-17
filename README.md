@@ -1,4 +1,4 @@
-# Home Assistant for Arduino
+# Arduino Connector for Home Assistant
 
 ![](icon.png)
 
