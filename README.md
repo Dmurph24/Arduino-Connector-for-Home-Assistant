@@ -17,6 +17,9 @@ ESP8266HomeAssistant requires ArduinoJson to create and parse objects to Home As
 2. Open the Arduino IDE and go to Preferences. In `Additional Boards Manager URLs` enter the following:
   - `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
 
+## Installation
+Download the ZIP from this repository. Unzip the contents and change the name of the unzipped folder to `ESP8266HomeAssistant`. Move the folder to the `Ardunio/libraries/` directory on your computer.
+
 ## Usage
 The full usage of this library is included in the `examples` folder of this project ([See example file](examples/AllFeatures.ino)). Below is a summary of the library functions:
 
