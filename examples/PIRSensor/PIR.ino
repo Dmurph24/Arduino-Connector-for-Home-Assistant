@@ -8,7 +8,7 @@ const char* WIFI_PASS = "WifiPassword";
 const String BASE_URL = "http://hassio.local:8123";
 const String API_PASS = "APIPassword";
 
-// See HAConfig.yaml to see how these are setup in Home Assistant
+// See configuration.yaml to see how these are setup in Home Assistant
 const String MOTION_ENTITY_ID = "input_boolean.motion_detected";
 const String MOTION_THRESHOLD_ID = "sensor.motion_threshold";
 
