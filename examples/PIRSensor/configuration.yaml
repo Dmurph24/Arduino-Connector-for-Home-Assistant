@@ -1,0 +1,14 @@
+# Configuration.yaml
+
+sensors:
+  - platform: template
+    sensors:
+      motion_threshold:
+        friendly_name: "Time motion sensors should be dorment to turn off"
+        icon_template: "mdi:chart-line-variant"
+        value_template: >
+          {{ 15 }} # This means the motion will stay 'on' for at least 15 seconds after triggered
+
+input_boolean:
+  motion_detected:
+    name: Motion Detected
