@@ -20,7 +20,7 @@ void HomeAssistant::begin(const char* ssid, const char* wifi_pass, String api_ba
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
   }
-  if (api_pass.endsWith("/")) {
+  if (api_base.endsWith("/")) {
     _API_BASE = api_base + "api/";
   } else {
     _API_BASE = api_base + "/api/";
