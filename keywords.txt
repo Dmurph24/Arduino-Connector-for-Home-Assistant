@@ -1,12 +1,12 @@
 HomeAssistant	KEYWORD1
-HomeAssistantService KEYWORD1
+HomeAssistantService	KEYWORD1
 
-begin KEYWORD2
-connected KEYWORD2
-wifiConnected KEYWORD2
-readState KEYWORD2
-readResponse KEYWORD2
-setEntityState KEYWORD2
-setEntityStateWithPayload KEYWORD2
-callService KEYWORD2
-callEntityService KEYWORD2
+begin	KEYWORD2
+connected	KEYWORD2
+wifiConnected	KEYWORD2
+readState	KEYWORD2
+readResponse	KEYWORD2
+setEntityState	KEYWORD2
+setEntityStateWithPayload	KEYWORD2
+callService	KEYWORD2
+callEntityService	KEYWORD2
